@@ -1445,6 +1445,11 @@ document.querySelectorAll('#acc .acc-head').forEach(head=>{
   head.addEventListener('click', ()=>{
     const item = head.closest('.acc-item');
     const willOpen = !item.classList.contains('open');
+
+    /* 위쪽 항목이 접히면 페이지가 그만큼 짧아져 화면이 아래로 밀린다.
+       누른 항목의 화면상 위치를 전환이 끝날 때까지 붙잡아 둔다. */
+    const y0 = head.getBoundingClientRect().top;
+
     document.querySelectorAll('#acc .acc-item.open').forEach(o=>{
       o.classList.remove('open');
       o.querySelector('.acc-head').setAttribute('aria-expanded','false');
@@ -1453,6 +1458,14 @@ document.querySelectorAll('#acc .acc-head').forEach(head=>{
       item.classList.add('open');
       head.setAttribute('aria-expanded','true');
     }
+
+    const t0 = performance.now();
+    const hold = t=>{
+      const dy = head.getBoundingClientRect().top - y0;
+      if(Math.abs(dy) > 0.5) window.scrollBy(0, dy);
+      if(t - t0 < 650) requestAnimationFrame(hold);   /* CSS 전환 .55s */
+    };
+    requestAnimationFrame(hold);
   });
 });
 
