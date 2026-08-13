@@ -1,0 +1,9 @@
+DEPLOY.bat
+deploy.ps1
+.deploy-config
+Thumbs.db
+desktop.ini
+.DS_Store
+*.psd
+*.ai
+*.indd
