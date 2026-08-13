@@ -9,3 +9,9 @@ desktop.ini
 *.indd
 QUICK.bat
 quick.ps1
+
+# 개인 메모 — 저장소에 올리지 않음
+배포용 주소.txt
+*메모*
+개인*
+_private/
