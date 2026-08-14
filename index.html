@@ -651,56 +651,6 @@ footer{
 footer p{font-size:12px;color:var(--muted-2);letter-spacing:.06em}
 footer .up{font-size:11px;font-weight:800;letter-spacing:.18em;color:var(--accent)}
 
-/* ============================================================
-   CONTACT POPUP — 헤더 CONTACT ME 클릭 시
-   ============================================================ */
-.cpop{
-  position:fixed;inset:0;z-index:210;display:none;
-  align-items:center;justify-content:center;padding:24px;
-  background:rgba(2,10,6,.78);backdrop-filter:blur(8px);
-}
-.cpop.open{display:flex;animation:fade .28s var(--ease)}
-.cpop-box{
-  width:100%;max-width:400px;background:#082014;
-  border:1px solid var(--line);border-radius:8px;
-  padding:36px 34px 30px;text-align:center;position:relative;
-  box-shadow:0 30px 80px rgba(0,0,0,.5);
-  animation:rise .38s var(--ease);
-}
-.cpop-x{
-  position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;
-  display:grid;place-items:center;font-size:15px;color:var(--muted-2);
-  transition:all .3s var(--ease);
-}
-.cpop-x:hover{background:rgba(255,255,255,.08);color:#fff;transform:rotate(90deg)}
-.cpop-ico{
-  width:54px;height:54px;margin:0 auto 18px;border-radius:50%;
-  display:grid;place-items:center;color:var(--accent);
-  background:rgba(53,213,127,.10);border:1px solid rgba(53,213,127,.35);
-}
-.cpop-ico svg{width:22px;height:22px}
-.cpop .label{display:block;margin-bottom:10px}
-.cpop-num{
-  font-size:28px;font-weight:800;letter-spacing:-.005em;line-height:1.2;
-  display:block;color:#fff;
-}
-.cpop-mail{
-  display:block;margin-top:10px;font-size:13.5px;color:var(--muted);
-  word-break:break-all;transition:color .25s;
-}
-.cpop-mail:hover{color:var(--accent)}
-.cpop-acts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
-.cpop-btn{
-  padding:14px 10px;border-radius:100px;border:1px solid var(--accent);
-  font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--accent);
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  transition:background .3s var(--ease),border-color .3s var(--ease),color .3s var(--ease);
-}
-.cpop-btn svg{width:15px;height:15px;flex:none}
-.cpop-btn:hover{background:#fff;border-color:#fff;color:#0A0A0A}
-.cpop-btn.primary{background:rgba(53,213,127,.12)}
-.cpop-btn.primary:hover{background:#fff;border-color:#fff;color:#0A0A0A}
-.cpop-note{margin-top:16px;font-size:11.5px;color:var(--muted-2);line-height:1.8}
 
 /* ============================================================
    CURSOR — STATUS 점의 퍼지는 파동을 커서에 적용
@@ -851,9 +801,8 @@ footer .up{font-size:11px;font-weight:800;letter-spacing:.18em;color:var(--accen
       <a href="#about">Profile</a>
       <a href="#work">Work</a>
       <a href="#graphic">Graphic</a>
-      <a href="#contact">Contact</a>
     </div>
-    <button class="btn-mail" id="contactBtn" type="button" aria-haspopup="dialog">CONTACT ME</button>
+    <button class="btn-mail" id="contactBtn" type="button">CONTACT ME</button>
   </nav>
 </header>
 
@@ -1198,33 +1147,6 @@ footer .up{font-size:11px;font-weight:800;letter-spacing:.18em;color:var(--accen
   <span class="cur-pulse"></span>
 </div>
 
-<!-- ══════════════ CONTACT POPUP ══════════════ -->
-<div class="cpop" id="cpop" role="dialog" aria-modal="true" aria-label="연락처">
-  <div class="cpop-box">
-    <button class="cpop-x" id="cpopX" type="button" aria-label="닫기">✕</button>
-
-    <div class="cpop-ico">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
-    </div>
-
-    <span class="label">Contact</span>
-    <a class="cpop-num" href="tel:01040407302">010-4040-7302</a>
-    <a class="cpop-mail" href="mailto:wownsl456@hanmail.net?subject=%5B%EC%B1%84%EC%9A%A9%20%EC%A0%9C%EC%95%88%5D%20%EC%9C%A0%EC%9E%AC%EC%A4%80%20%EB%8B%98%EA%BB%98">wownsl456@hanmail.net</a>
-
-    <div class="cpop-acts">
-      <a class="cpop-btn primary" href="tel:01040407302">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
-        전화 걸기
-      </a>
-      <button class="cpop-btn" type="button" id="cpopCopy" data-copy="010-4040-7302">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-        번호 복사
-      </button>
-    </div>
-
-    <p class="cpop-note">PC에서는 번호를 복사해 사용하시고,<br>모바일에서는 바로 통화로 연결됩니다.</p>
-  </div>
-</div>
 
 <!-- ══════════════ QUICK TOP ══════════════ -->
 <button class="quick-top" id="quickTop" type="button" aria-label="맨 위로">
@@ -1722,15 +1644,10 @@ function copyIt(btn, doneLabel){
   }
 }
 
-/* 헤더 CONTACT ME → 연락처 팝업 */
-const cpop = document.getElementById('cpop');
-const openCpop  = ()=>{ cpop.classList.add('open');  document.body.classList.add('modal-open'); };
-const closeCpop = ()=>{ cpop.classList.remove('open'); document.body.classList.remove('modal-open'); };
-document.getElementById('contactBtn').onclick = openCpop;
-document.getElementById('cpopX').onclick = closeCpop;
-cpop.addEventListener('click', e=>{ if(e.target===cpop) closeCpop(); });
-document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeCpop(); });
-document.getElementById('cpopCopy').addEventListener('click', function(){ copyIt(this,'번호 복사'); });
+/* 헤더 CONTACT ME → 컨택 섹션으로 이동 */
+document.getElementById('contactBtn').addEventListener('click', ()=>{
+  document.getElementById('contact').scrollIntoView({behavior:'smooth', block:'start'});
+});
 
 /* 배경 영상: 재생이 시작되면 페이드인 (자동재생이 막히면 포스터 이미지 유지) */
 const hv = document.getElementById('heroVideo');
